@@ -58,14 +58,10 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
-.primary-button:hover {
-  background-color: rgb(8, 69, 139);
-}
 
 .primary-button:active {
   background-color: rgb(8, 69, 139);
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+  box-shadow: 0 2px #666;
 }
 
 .header-text {
@@ -112,6 +108,7 @@ body {
   font-weight: 300;
   color: gray;
   max-width: 300px;
+  padding: 7px;
 }
 
 .vertical-line-block {
@@ -125,4 +122,15 @@ body {
   display: inline;
   position: relative;
   margin: 1em 1em 0 1em;
+}
+
+.city-name {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 475px) {
+  .center-align-content {
+    flex-direction: column;
+  }
 }

@@ -1,29 +1,29 @@
-//https://www.weather.gov/documentation/services-web-api&sa=D&source=calendar&ust=1641768438693965&usg=AOvVaw3OWCV8Z2DjkIpuF6eXz_L2
 
-async function displayWeatherData(){
 
-    
+async function displayWeatherData(){   //displays all the data with respect to the input co-ordinates
+
     const dayTime = document.getElementById("select-daytime").value;
     const info = document.getElementById("info");
     info.innerHTML = '<div id="loading" data-text="Loading…">Loading…</div>';
 
     try{
-    periods = await getWeatherReport();
-
-    for (const period of periods) {
+    data = await getWeatherReport();
+    
+    for (const period of data.periods) {
         if (period.name === dayTime) {
             info.innerText = period.temperature +"°"+ period.temperatureUnit;
             info.innerHTML += `<div class="detail-forecast">${period.detailedForecast}</div>`;
+            info.innerHTML += `<div class="city-name">${data.city}, ${data.state}</div>`;
+            break;   
         }
     }
 }
-catch(ex)
-{
-    info.innerHTML = `<div class="error">${ex.message}</div>`;
-}
+    catch(ex){
+            info.innerHTML = `<div class="error">${ex.message}</div>`;
+        }
 }
 
-async function getWeatherReport () {
+async function getWeatherReport () {     //fetches the data from the JSON returned from the API response
 
     let latitude = document.getElementById("latitude").value;
     let longitude = document.getElementById("longitude").value;
@@ -32,7 +32,6 @@ async function getWeatherReport () {
     longitude = formatCoordinate(longitude);
 
     try{
-
     
     const response = await fetch(`https://api.weather.gov/points/${latitude},${longitude}`);
     if (response.status=='404')
@@ -40,18 +39,23 @@ async function getWeatherReport () {
     
     const jsonResponse = await response.json();
     const propertiesAPI = await jsonResponse.properties; 
+
+    const location =  propertiesAPI.relativeLocation;
+    const locationProperties =  location.properties;
+    const city =  locationProperties.city;
+    const state =  locationProperties.state;
     const forecastAPI = await propertiesAPI.forecast;
     const weekForecastData = await fetch(forecastAPI);
     const jsonWeekForecastData = await weekForecastData.json();
     const periods = await jsonWeekForecastData.properties.periods;
-    return periods;
+    return {periods:periods, city:city, state:state};
     }
     catch(ex){
         throw ex;
     }
 }
 
-function formatCoordinate(coordinate){
+function formatCoordinate(coordinate){    //Handles the error in the format or type of the input values
 
     try{
     
