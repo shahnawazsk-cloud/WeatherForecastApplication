@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="center-align-content" id="main-app-body">
+    <div id="weather-div">
+      <div class="center-align-content header-text"> Weather Forecast</div>
+      <div class="center-align-content header-text">
+        <div id="info"></div>
+      </div>
+      <div class="center-align-content">
+        <div class="vertical-line-block "><p class="flex-items">Latitude</p><input class="coordinate-input flex-items" id="latitude" type="text" placeholder="latitude"/></div>
+        <div class="vertical-line-block"><p class="flex-items">Longitude</p><input class="coordinate-input flex-items" id="longitude" type="text" placeholder="longitude"/></div>
+      </div >
+      <div class="center-align-content" >
+        <div class="vertical-line-block "style = "align-items:center"><p class="flex-items">Please select day and time</p>
+        <select name="dayTime" id="select-daytime">
+          <option value="Monday">Monday</option>
+          <option value="Monday Night">Monday Night</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Tuesday Night">Tuesday Night</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Wednesday Night">Wednesday Night</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Thursday Night">Thursday Night</option>
+          <option value="Friday">Friday</option>
+          <option value="Friday Night">Friday Night</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Saturday Night">Saturday Night</option>
+          <option value="Sunday">Sunday</option>
+          <option value="Sunday Night">Sunday Night</option>
+      </select>
+    </div>
+    </div>
+    <div class="center-align-content">
+        <button class="primary-button"type="button" onclick="displayWeatherData()">Get Weather</button>
+      </div>
+    </div>
+  </div>
+    
+    <script src="./weather.js"></script>
+  </body>
+</html>
