@@ -14,7 +14,7 @@ The purpose of Weather Forecast Application is to fetch the details of the weath
    ![](./images/index.png)
 
 2. Provide **latitude** and **longitude** in the input fields, select **day and time** from the drop down menu and click on the **Get Weather** button
-   ![](./images/steps.png)
+   ![](./images/Steps.png)
 
 ### Output:
 ![](./images/output.png)
