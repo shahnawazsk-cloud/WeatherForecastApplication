@@ -12,6 +12,7 @@ The purpose of Weather Forecast Application is to fetch the details of the weath
 
 1. Compile and run the [index.html](./index.html)
    ![](./images/index.png)
+
 2. Provide **latitude** and **longitude** in the input fields, select **day and time** from the drop down menu and click on the **Get Weather** button
    ![](./images/steps.png)
 
