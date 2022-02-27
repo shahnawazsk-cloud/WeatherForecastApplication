@@ -20,7 +20,7 @@ The purpose of Weather Forecast Application is to fetch the details of the weath
 
 ### Output:
 
-![](./images/output.png)
+![](./images/Output.png)
 
 ## How the application was built:
 
