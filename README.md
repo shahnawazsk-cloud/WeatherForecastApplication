@@ -2,4 +2,4 @@
 
 ## Application UI:
 
-![](images/weatherForecastApp.png)
+![](./images/WeatherForecastApp.png)
