@@ -2,7 +2,7 @@
 
 The purpose of Weather Forecast Application is to fetch the details of the weather on a particular day or in near future of a location as per the latitude and longitude provided by the user as its input.
 
-**Note**: This application works only for latitude and longitude of places in ==United States==.
+**Note**: This application works only for latitude and longitude of places in United States.
 
 ## Application UI:
 
@@ -10,7 +10,7 @@ The purpose of Weather Forecast Application is to fetch the details of the weath
 
 ## How to use it:
 
-- Compile and run the [index.html](./index.html)
+- Compile and run the [index.html](./src/index.html)
 
   ![](./images/index.png)
 
@@ -33,15 +33,15 @@ The purpose of Weather Forecast Application is to fetch the details of the weath
 
 ### Code Review:
 
-- [index.html](./index.html) : Contains the HTML code for the UI of Weather Forecast Application
+- [index.html](./src/index.html) : Contains the HTML code for the UI of Weather Forecast Application
 
   ![](./images/indexcode.png)
 
-- [style.css](./style.css) : Contains the definitions for styling of the layout, elements, etc used in the [index.html](./index.html)
+- [style.css](./src/style.css) : Contains the definitions for styling of the layout, elements, etc used in the [index.html](./index.html)
 
   ![](./images/css.png)
 
-- [weather.js](./weather.js) : Contains the JavaScript code for the logic used to fetch Weather Forecast data for this Application
+- [weather.js](./src/weather.js) : Contains the JavaScript code for the logic used to fetch Weather Forecast data for this application
 
   - Function to call the API, retrieve and store the JSON from the API response and extract the data.
 
