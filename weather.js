@@ -11,9 +11,11 @@ async function displayWeatherData(){   //displays all the data with respect to t
     
     for (const period of data.periods) {
         if (period.name === dayTime) {
+            
             info.innerText = period.temperature +"°"+ period.temperatureUnit;
-            info.innerHTML += `<div class="detail-forecast">${period.detailedForecast}</div>`;
-            info.innerHTML += `<div class="city-name">${data.city}, ${data.state}</div>`;
+            info.innerHTML += `<div class="detail-forecast">${period.detailedForecast},<br>${period.shortForecast}</br></div>`;
+            info.innerHTML += `<div class="city-name">${data.city}, ${data.state},<br><img src=${period.icon}></br></div>`;
+            // info.innerHTML = `<div class="detail-forecast"><img src=${period.icon}></div>`;
             break;   
         }
     }
@@ -48,7 +50,9 @@ async function getWeatherReport () {     //fetches the data from the JSON return
     const weekForecastData = await fetch(forecastAPI);
     const jsonWeekForecastData = await weekForecastData.json();
     const periods = await jsonWeekForecastData.properties.periods;
-    return {periods:periods, city:city, state:state};
+    const shortForecast = periods.shortForecast;
+    const icon= fetch(periods.icon);
+    return {periods:periods, city:city, state:state, shortForecast: shortForecast, icon:icon};
     }
     catch(ex){
         throw ex;
