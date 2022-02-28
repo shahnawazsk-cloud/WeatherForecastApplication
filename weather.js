@@ -15,7 +15,6 @@ async function displayWeatherData(){   //displays all the data with respect to t
             info.innerText = period.temperature +"°"+ period.temperatureUnit;
             info.innerHTML += `<div class="detail-forecast">${period.detailedForecast},<br>${period.shortForecast}</br></div>`;
             info.innerHTML += `<div class="city-name">${data.city}, ${data.state},<br><img src=${period.icon}></br></div>`;
-            // info.innerHTML = `<div class="detail-forecast"><img src=${period.icon}></div>`;
             break;   
         }
     }
